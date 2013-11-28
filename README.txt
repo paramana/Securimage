@@ -1,8 +1,3 @@
-Securimage
-============
-
-Just taken from http://www.phpcaptcha.org and put it on github
-
 NAME:
 
     Securimage - A PHP class for creating captcha images and audio with many options.
@@ -17,6 +12,45 @@ DOWNLOAD:
 
     The latest version can always be
     found at http://www.phpcaptcha.org
+
+DOCUMENTATION:
+
+    Online documentation of the class, methods, and variables can
+    be found at http://www.phpcaptcha.org/Securimage_Docs/
+
+REQUIREMENTS:
+    PHP 5.2 or greater
+    GD  2.0
+    FreeType (Required, for TTF fonts)
+    PDO (if using Sqlite, MySQL, or PostgreSQL)
+
+SYNOPSIS:
+
+    require_once 'securimage.php';
+
+    $image = new Securimage();
+
+    $image->show();
+
+    // Code Validation
+
+    $image = new Securimage();
+    if ($image->check($_POST['code']) == true) {
+      echo "Correct!";
+    } else {
+      echo "Sorry, wrong code.";
+    }
+
+DESCRIPTION:
+
+    What is Securimage?
+
+    Securimage is a PHP class that is used to generate and validate CAPTCHA images.
+    The classes uses an existing PHP session or creates its own if none is found to store the
+    CAPTCHA code.  Variables within the class are used to control the style and display of the image.
+    The class supports TTF fonts and effects for strengthening the security of the image.
+    An audible code can also be streamed to the browser for visually impared users.
+
 
 COPYRIGHT:
     Copyright (c) 2013 Drew Phillips
